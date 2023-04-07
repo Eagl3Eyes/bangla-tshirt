@@ -12,7 +12,7 @@ const Home = () => {
     const handleAddToCart = tshirt => {
         const exists = cart.find(ts => ts._id === tshirt._id);
         if (exists) {
-            toast.error('You have already added this t-shirt')
+            toast.error('You have already added this t-shirt!')
         }
         else {
             const newCart = [...cart, tshirt];
@@ -25,6 +25,7 @@ const Home = () => {
     const handleRemoveFromCart = id => {
         const remaining = cart.filter(ts => ts._id !== id);
         setCart(remaining);
+        toast.success("Removed from Cart!")
     }
 
     return (
